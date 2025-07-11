@@ -1,43 +1,42 @@
-# 💡 Sequence Diagram: Creating a New Note
+# Sequence Diagram – Creating a New Note
 
-This diagram shows what happens behind the scenes when a user **writes a new note** and clicks the **"Save"** button on  
-👉 [https://studies.cs.helsinki.fi/exampleapp/notes](https://studies.cs.helsinki.fi/exampleapp/notes)
+This diagram represents the sequence of interactions that occur when a user creates a new note on the page:  
+[https://studies.cs.helsinki.fi/exampleapp/notes](https://studies.cs.helsinki.fi/exampleapp/notes)
 
-The browser communicates with the server to save the note, and then reloads the page to show the updated list of notes.
+The user enters text into the input field and clicks the **Save** button. The browser sends the data to the server using a `POST` request. The server responds with a redirect, which causes the browser to reload the page and fetch updated resources including the new note.
 
 ```mermaid
 sequenceDiagram
-    participant browser
-    participant server
+    participant Browser
+    participant Server
 
-    Note right of browser: 📝 User writes a note and clicks "Save"
+    Note right of Browser: User enters a note and clicks "Save"
 
-    browser->>server: POST /new_note
-    activate server
-    server-->>browser: HTTP 302 Redirect to /notes
-    deactivate server
+    Browser->>Server: POST /new_note
+    activate Server
+    Server-->>Browser: 302 Redirect to /notes
+    deactivate Server
 
-    browser->>server: GET /notes
-    activate server
-    server-->>browser: HTML page
-    deactivate server
+    Browser->>Server: GET /notes
+    activate Server
+    Server-->>Browser: HTML document
+    deactivate Server
 
-    browser->>server: GET /main.css
-    activate server
-    server-->>browser: CSS file
-    deactivate server
+    Browser->>Server: GET /main.css
+    activate Server
+    Server-->>Browser: CSS file
+    deactivate Server
 
-    browser->>server: GET /main.js
-    activate server
-    server-->>browser: JavaScript file
-    deactivate server
+    Browser->>Server: GET /main.js
+    activate Server
+    Server-->>Browser: JavaScript file
+    deactivate Server
 
-    Note right of browser: 🧠 JavaScript runs and fetches saved notes
+    Note right of Browser: Browser executes JavaScript to fetch JSON data
 
-    browser->>server: GET /data.json
-    activate server
-    server-->>browser: All notes including the new one
-    deactivate server
+    Browser->>Server: GET /data.json
+    activate Server
+    Server-->>Browser: JSON containing all notes (including the new one)
+    deactivate Server
 
-    Note right of browser: ✅ Notes are re-rendered in the browser
-```
+    Note right of Browser: Browser renders the updated list of notes
