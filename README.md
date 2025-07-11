@@ -1,15 +1,25 @@
-# 🧠 FullstackOpen Part 0 – Diagrams
+# FullstackOpen Part 0 – Sequence Diagram
 
-This repo contains Mermaid sequence diagrams for exercises in **Part 0** of the [FullstackOpen](https://fullstackopen.com/en/) course.
+This repository contains a sequence diagram for Exercise 0.4 from Part 0 of the FullstackOpen course.
 
-## 📁 Included
+## About
 
-- `new_note_diagram.md`: Diagram showing what happens when a user creates a new note
+The diagram illustrates the sequence of events that occur when a user creates a new note on the application found at:
 
-## 📌 How to View
+https://studies.cs.helsinki.fi/exampleapp/notes
 
-GitHub supports Mermaid! Just click on the `.md` file and the diagram will be rendered directly on the page.
+It shows how the browser and server communicate when the user submits a note, including the HTTP POST request and the resulting page reload and resource fetch.
 
-## 🧑‍💻 Author
+## Files
 
-Dhairya Soni – [GitHub](https://github.com/YOUR_USERNAME)
+- `new_note_diagram.md`: Mermaid diagram showing the note creation sequence
+
+## How to View
+
+GitHub supports Mermaid syntax. Open the file `new_note_diagram.md` in the GitHub interface to view the rendered sequence diagram.
+
+## Author
+
+Dhairya Soni  
+Conestoga College  
+Web Development & Internet Applications
