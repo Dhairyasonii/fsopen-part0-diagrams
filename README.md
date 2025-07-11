@@ -1,0 +1,18 @@
+# FullstackOpen Part 0 – Sequence Diagrams
+
+This repository contains sequence diagrams for exercises from Part 0 of the FullstackOpen course.
+
+## Diagrams
+
+- `new_note_diagram.md` – Shows the process when a new note is submitted
+- `spa_diagram.md` – Shows what happens when the SPA version of the app is loaded
+
+## How to View
+
+Open any `.md` file in GitHub to see the rendered Mermaid diagrams. GitHub automatically displays Mermaid diagrams from Markdown files.
+
+## Author
+
+Dhairya Soni  
+Conestoga College  
+Web Development & Internet Applications

@@ -1,0 +1,35 @@
+# Sequence Diagram – Visiting the SPA Version
+
+This diagram describes the sequence of events that occurs when a user visits the Single Page Application (SPA) version of the notes app at:
+
+https://studies.cs.helsinki.fi/exampleapp/spa
+
+```mermaid
+sequenceDiagram
+    participant Browser
+    participant Server
+
+    Browser->>Server: GET /spa
+    activate Server
+    Server-->>Browser: HTML document
+    deactivate Server
+
+    Browser->>Server: GET /main.css
+    activate Server
+    Server-->>Browser: CSS file
+    deactivate Server
+
+    Browser->>Server: GET /main.js
+    activate Server
+    Server-->>Browser: JavaScript file
+    deactivate Server
+
+    Note right of Browser: JavaScript executes in the browser
+
+    Browser->>Server: GET /data.json
+    activate Server
+    Server-->>Browser: JSON data with notes
+    deactivate Server
+
+    Note right of Browser: Browser dynamically renders content using JavaScript
+```
